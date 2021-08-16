@@ -1,0 +1,32 @@
+[
+    { "id": 11, "name": "Dr Nice", 
+    "image": "/assets/img/Dr Nice-card.png"
+    },
+    { "id": 12, "name": "Narco",
+        "image": "/assets/img/Narco-card.png" 
+    },
+    { "id": 13, "name": "Bombasto",
+        "image": "/assets/img/Bombasto-card.png" 
+    },
+    { "id": 14, "name": "Celeritas",
+        "image": "/assets/img/Celeritas-card.png" 
+    },
+    { "id": 15, "name": "Magneta",
+        "image": "/assets/img/Magneta-card.png" 
+    },
+    { "id": 16, "name": "RubberMan",
+        "image": "/assets/img/RubberMan-card.png"
+    },
+    { "id": 17, "name": "Dynama",
+        "image": "/assets/img/Dynama-card.png" 
+    },
+    { "id": 18, "name": "Dr IQ",
+        "image": "/assets/img/Dr IQ-card.png" 
+    },
+    { "id": 19, "name": "Magma",
+        "image": "/assets/img/Magma-card.png" 
+    },
+    { "id": 20, "name": "Tornado",
+        "image": "/assets/img/Tornado-card.png" 
+    }
+]
