@@ -1,0 +1,20 @@
+<div class="main-heroes">
+    <h2>My Heroes Collection</h2>
+    <div class="row">
+        <ul class="heroes">
+            <li *ngFor='let hero of heroes' class="row my-hero-card justify-content-between">
+                <a routerLink="/detail/{{hero.id}}" class="col-7 d-flex hero-link" (mouseover)="showCard(hero.name)" (mouseleave)="hideShowedCard()">
+                    <p>{{hero.id}} {{hero.name}}</p>
+                </a>
+                <button class="delete col-2 btn btn-danger" title="delete hero" (click)="delete(hero)">X</button>
+            </li>
+        </ul>
+        <div>
+            <label for="new-hero">Hero name</label>
+            <input id="new-hero" #heroName>
+            <button class="add-button" (click)="add(heroName.value); heroName.value=''">Add hero</button>
+        </div>
+    </div>
+    <img src="#" id="appended-image" class="showed-card d-none">
+</div>
+<app-hero-search></app-hero-search> 

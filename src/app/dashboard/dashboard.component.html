@@ -1,0 +1,13 @@
+<div class="main-dashboard">
+    <h2>Top Heroes</h2>
+    <div class="heroes-menu">
+        <a *ngFor="let hero of heroes" routerLink="/detail/{{hero.id}}"> {{hero.name}}</a>   
+    </div>
+    <h2>Top Hero Decks</h2>
+    <div class="heroes-menu justify-content-center">
+        <ul *ngFor="let decks of topDecks" class="col-3 ">{{decks.name}}
+           <li *ngFor="let card of decks.cards" class="">{{card.name}}</li>
+        </ul>
+    </div>
+    <button (click)="conse()">consol</button>
+</div>

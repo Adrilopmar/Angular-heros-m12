@@ -1,0 +1,8 @@
+<h3 mat-dialog-title class="text-center">Good Game!</h3>
+<div mat-dialog-content>
+    <h2 class="text-center">{{data.win}}</h2>
+</div>
+<div mat-dialog-actions class="d-flex justify-content-between">
+  <a mat-raised-button color='warn' (click)="closeDialog()" routerLink="/mydeck">Close</a>
+  <a mat-raised-button color='primary' (click)="closeDialog()" routerLink="/boardgame">Play again</a>
+</div>

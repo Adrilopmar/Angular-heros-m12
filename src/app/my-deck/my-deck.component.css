@@ -1,0 +1,65 @@
+.main-deck{
+    margin-top: 2vw;
+  }
+  .titleDeck{
+    height: 0;
+  }
+  .my-deck-card{
+    margin: 1em 0;
+    background-color: #d9d2c6;
+    border-radius: 7px;
+    padding: 5px;
+  }
+  .my-deck-card:hover{
+    background-color: #6e6e6e6e;
+  }
+  .deck{
+    /* width: 30%; */
+    min-width: 215px;
+  }
+  .deck-link{
+    text-decoration: none;
+    color: black;
+  }
+  .deck-link p{
+    color: black;
+    margin: auto 0;
+  }
+  .badge{
+    color: black;
+    padding: 0;
+  }
+.btn-success,
+.btn-danger{
+    margin-right: 2px;
+    padding: 0%;
+    border-radius: 7px;
+  }
+.deckBtn{
+  margin: auto;
+  width: 100%;
+}
+.saved-deck-list{
+  cursor: pointer;
+}
+.details-deck-btn{
+  margin-top: 1em;
+  margin: auto;
+  width: 90%;
+}
+
+.try{
+  position: relative;
+}
+.showed-card{
+  position: absolute;
+  width: 400px;
+  left: 30%;
+  top: 15%;
+}
+.deckInput{
+  margin: 12px 0px;
+}
+.deckSave{
+  flex-direction: column;
+}

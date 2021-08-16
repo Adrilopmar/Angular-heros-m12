@@ -1,0 +1,44 @@
+h3{
+    font-size: 46px;
+    margin-top: 4vw;
+    font-weight: bolder;
+}
+ul{
+    list-style: none;
+    padding: 0;
+}
+.img-card{
+    width: 100%;
+}
+.deck-title{
+    font-size: 36px;
+}
+.parentDeckBoxPlayer1,
+.parentDeckBoxPlayer2{
+    border: 2px solid #000;
+    padding-bottom: 25px;
+    margin: 5px;
+}
+.parentDeckBoxPlayer1{
+    background-color: rgba(102, 102, 240, 0.384);  
+}
+.parentDeckBoxPlayer2{
+    background-color: rgba(248, 226, 99, 0.384);  
+}
+.inputDeckBox{
+    margin: 10px;
+    flex-direction: column;
+}
+.inputChoice{
+    margin-top: 7px;
+    width: 25%;
+}
+.first-time{
+    font-size: 20px;
+}
+.tutorial{
+    color: rgb(56, 148, 20);
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 24px;
+}

@@ -1,0 +1,61 @@
+<div class="try row justify-content-between" id="pope">
+    <div class="col-3">
+    <div class="main-deck  row">
+        <h2>My Cards</h2>
+        <ul class="deck">
+            <li *ngFor='let hero of heroes' class="row my-deck-card justify-content-between">
+                <a routerLink="/detail/{{hero.id}}" class="col-7 deck-link" (mouseover)="showCard(hero.name)" (mouseleave)="hideShowedCard()">
+                    <p>{{hero.id}} {{hero.name}}</p>
+                </a>
+                <button class="col-2 btn btn-success" (click)="pickCard(hero)">Add</button>
+            </li>
+        </ul>
+    </div>
+</div>
+                   <!-- container of My deck -->
+    <div class="col-3">
+    <div  *ngIf="deck.length" class=" main-deck ">
+        <div class="row">
+            <!-- hem de fer que cada cop que es faci push al array deck aparegui a la pantalla -->
+            <h2>My Cards</h2>
+            <ul class="deck">
+                <li *ngFor='let card of deck' class="row my-deck-card justify-content-between" >
+                    <a routerLink="/detail/{{card.id}}"  class="col-7 deck-link">
+                        <p> {{card.id}} {{card.name}}</p>
+                    </a>
+                    <button class="col-2 btn btn-danger" (click)="delete(card)">x</button>
+                </li>
+            </ul>
+            <div *ngIf="deck.length ==4" class=" col-12 deckSave d-flex justify-content-center">
+                <label for="deckName" class="text-center">Deck's name:</label>
+                <input type="text" #deckName class=" deckInput">
+                <button class="  btn btn-warning deckBtn" (click)="saveDeck(deckName.value);deckName.value"> Save deck</button>
+            </div>
+        </div>
+    </div>
+</div>
+        <!-- container of My saved Decks -->
+    <div class="col-3">
+        <div *ngIf="userSavedDecks.length" class=" main-deck">
+            <div class="row">
+                <h2>Saved decks</h2>
+                <button class=" col-10 btn btn-info  details-deck-btn" (click)="deckDetails()"> See/Hide decks details</button>
+                <ul class="deck">
+                    <li *ngFor="let savedDecks of userSavedDecks" class="row my-deck-card justify-content-between">
+                        <span class=" saved-deck-list col-9 deck-link">
+                            <p>{{savedDecks.name}}</p>
+                            <div #userDeckDetail *ngIf="isShown"> 
+                                <ul>
+                                    <li *ngFor="let card of savedDecks.cards">{{card.name}}</li>
+                                </ul>
+                            </div>
+                        </span>
+                        <button class="col-2 btn btn-danger" (click)="deleteDeck(savedDecks)">x</button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <img src="#" id="appended-image" class="showed-card d-none">
+</div>
+<button (click)="conse()">console.log()</button>

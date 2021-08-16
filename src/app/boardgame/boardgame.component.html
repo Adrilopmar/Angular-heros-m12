@@ -1,0 +1,43 @@
+<div>
+    <h3 class="text-center">Welcome to {{title}} Battle!</h3>
+    <p class="text-center first-time">First time you play? check out the <span (click)="opentutorial()" class="tutorial"> How to play manual</span> </p>
+    <div class="parentDeckBoxPlayer1">
+        <div class="inputDeckBox d-flex">
+            <label for="deckSelector">Player 1- </label> 
+             <select #deckSelector name="deckSelector" class="inputChoice"  (change)="selectingDeck(deckSelector.value, deckSelector.name)">
+                 <option value="" actiive>Select a deck</option>
+                 <option *ngFor="let topDeck of topDecks" value="{{topDeck.name}}">{{topDeck.name}}</option>
+                 <option *ngFor="let deck of userSavedDecks" value="{{deck.name}}">{{deck.name}}</option>
+             </select>  
+         </div>
+         <div *ngIf="deckSelector.value.length">
+             <ul class="row justify-content-center">
+                 <li *ngFor="let card of cardsOfDeck" class="row justify-content-center col-3 text-center">
+                     <p>{{card.name}}</p>
+                     <img  class="img-card" src="/assets/img/{{card.name}}-card.png" alt="">
+                 </li>
+             </ul>
+         </div>
+    </div>
+    <div class="parentDeckBoxPlayer2">
+        <div class="inputDeckBox d-flex">
+           <label for="deckSelectorTwo">Player 2 </label> 
+            <select #deckSelectorTwo name="deckSelectorTwo" value="Player2" class="inputChoice" (change)="selectingDeck(deckSelectorTwo.value, deckSelectorTwo.name)">
+                <option value="" actiive>Select a deck</option>
+                <option *ngFor="let topDeck of topDecks" value="{{topDeck.name}}">{{topDeck.name}}</option>
+                <option *ngFor="let deck of userSavedDecks" value="{{deck.name}}">{{deck.name}}</option>
+            </select>  
+        </div>
+        <div *ngIf="deckSelectorTwo.value.length">
+            <ul class="row justify-content-center">
+                <li *ngFor="let card of cardsOfDeckTwo" class="row justify-content-center col-3 text-center">
+                    <p>{{card.name}}</p>
+                    <img  class="img-card" src="/assets/img/{{card.name}}-card.png" alt="">
+                </li>
+            </ul>
+        </div>
+    </div>
+<button *ngIf="deckSelector.value.length" (click)="letsBattle()" routerLink="/battlefield" class="btn btn-info">Let's battle!</button>
+<button (click)="conse()"> console.log()</button>
+</div>
+ 

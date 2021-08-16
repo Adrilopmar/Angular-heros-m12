@@ -1,0 +1,11 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~bootstrap/dist/css/bootstrap.min.css';
+body{
+    background: url('../src/assets/img/hero-background.png') no-repeat fixed;
+    background-size: 33%;
+    background-position-x: 90%;
+    background-position-y: 90%;
+    background-color: #eef0eb;
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

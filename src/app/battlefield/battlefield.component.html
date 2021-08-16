@@ -1,0 +1,54 @@
+<div class="row first-container">
+    <div class="battlePoints">
+        <p class="player1-points col-3 text-center">Player 1 points: {{poointsPlayerOne}}</p>
+        <p class="player2-points col-3 text-center">Player 2 points: {{poointsPlayerTwo}} </p>
+    </div>
+    <div class="justify-content-around d-flex information">
+        <p *ngIf="cardPlayed==true" class="card-played"> Pick another card {{turn}}. This card has been already played </p>
+    </div>
+    <div cdkDropList #deckUser="cdkDropList" 
+        [cdkDropListData]="deckPlayerOne" 
+        [cdkDropListConnectedTo]="[battleList]" 
+        (cdkDropListDropped)="validateDrop($event,'one','handOne')"
+        cdkDropListSortingDisabled   class="deck-player-1 col-3 border">
+        <li *ngFor="let card of deckPlayerOne" cdkDrag class="justify-content-center d-flex">
+            <img  class="img-card" src="/assets/img/{{card.name}}-card.png" alt="">
+        </li>
+    </div> 
+    <div cdkDropList
+    #battleList="cdkDropList" [cdkDropListData]="fightingCard"
+    [cdkDropListConnectedTo]="[deckUser]" 
+    (cdkDropListDropped)="validateDrop($event,'one','attackOne')" 
+    class="battlefield-fights col-3 border" >
+    
+    <p *ngIf="turn=='player1'" class="player-turn">Player 1 turn</p>
+    
+        <div cdkDrag *ngFor="let battle of fightingCard" class="d-flex justify-content-around"><img class="img-card" src="/assets/img/{{battle.name}}-card.png" alt=""> </div>
+        <button *ngIf="fightingCard.length && turn == 'player1'" class="btn btn-success ready-btn" (click)="ready('one')"> Ready!</button>
+    </div>
+
+<!-- Player 2 list --> 
+    <div cdkDropList
+    #battleListTwo="cdkDropList" [cdkDropListData]="fightingCardTwo"
+    [cdkDropListConnectedTo]="[deckUserTwo]" 
+    (cdkDropListDropped)="validateDrop($event,'two','attackTwo')" 
+    class="battlefield-fights col-3 border ">
+    <p *ngIf="turn=='player2'"  class="player-turn">Player 2 turn</p>
+        <div cdkDrag *ngFor="let battle of fightingCardTwo" class="d-flex justify-content-around"><img class="img-card" src="/assets/img/{{battle.name}}-card.png" alt=""> </div>
+        <div class="d-flex justify-content-around">
+            <button *ngIf="fightingCardTwo.length && turn == 'player2'" class="btn btn-success ready-btn" (click)="ready('two')"> Ready!</button>
+        </div>
+    </div>
+    <div cdkDropList #deckUserTwo="cdkDropList" 
+    [cdkDropListData]="deckPlayerTwo" 
+    [cdkDropListConnectedTo]="[battleListTwo]" 
+    (cdkDropListDropped)="validateDrop($event,'two','handTwo')"
+    cdkDropListSortingDisabled class="deck-player-2 col-3 border">
+    
+        <li *ngFor="let card of deckPlayerTwo" cdkDrag class="justify-content-center d-flex">
+            <img  class="img-card" src="/assets/img/{{card.name}}-card.png" alt="">
+        </li>
+    </div>
+</div>
+<button (click)="conse()">Console.log()</button>
+<button (click)="openDialog()">openDialog</button>

@@ -1,0 +1,17 @@
+<div *ngIf="!onBattle">
+<h1>{{title}}</h1>
+<nav class="row justify-content-between">
+    <ul class="d-flex col-8">
+        <li><a routerLink="/dashboard">Dashboard</a></li>
+        <li><a routerLink="/heroes">Heroes Collectiion</a></li>
+        <li><a routerLink="/mydeck">My deck</a></li>
+        <li><a routerLink="/messages">Messages</a></li>
+        <li><p (click)="tutorial()"  >How to play</p></li>
+    </ul>
+    <div class="col-2 container-link d-flex justify-content-center">
+        <a *ngIf="canPlay==true" routerLink="/boardgame" id="playLink">PLAY!</a>
+        <a *ngIf="canPlay==false"  id="cantPlayLink">PLAY!</a>
+    </div>
+</nav>
+</div>
+<router-outlet></router-outlet>

@@ -1,0 +1,62 @@
+<h3 mat-dialog-title class="text-center">Welcome to Angular Heroes Battle Alfa version</h3>
+<div mat-dialog-content>
+    <p>Angular Heroes Battle it's a quite simple card game since its an Alfa version.
+        Not even all its mechanics are working yet.
+    </p>
+    <p> First of all let's take a look at the cards.</p>
+    <div class="row container">
+        <ul class="col-6">
+            <li> As  you can see, we have got 3 stats:
+                <ul>
+                    <li>Strenght or Attack</li>
+                    <li>Resistance or Defense </li>
+                    <li>Help</li>
+                </ul>
+            </li>
+            <li><b>Strenght / Attack:</b> This stat is used when the card is attacking.
+            if the Attack of the attacking card is equal or hihger than defense's defending card,
+            the attacking card will win the battle and score a point for its player.
+            </li>
+            <li> <b>Resistance / Defense:</b> this stat is used when your card is defending.
+            if the defense is hihger than the Strenght of the attacking card, this one 
+            will successfully defend and will attack back. Then if the defender card's Strenght 
+            is equal of higher than attacker card's defense, this one will score a point for its player. 
+            </li>
+            <li><b>Help:</b> this stat is not used and has no relevance in the game yet.
+            But if you want to know what is it and how it will affect to the battles, keep reading.
+            The help is a boost to the Strenght and defense. It will be triggered when a player lose a battle.
+            So, let's say that Player A attacks to Player B with Celeritas (where its help is 1). Player B defenses successfully and wins the battle point.
+            This way, next card that player A plays will get a boost of X where X is based on the help of the card that has lost the last battle, 
+            in this case the boost will be +1 to Strenght and +1 to defense as the help of the last defeateed card's player (player A) is 1. </li>
+            <p>Now let's talk about the turns and the basic rules</p>
+        
+        </ul>
+        <img  class="tutorial-img" src="./assets/img/tutorial-img.png" alt="">
+        <ul>
+            <li>Each player will have 4 turns. 2 attaking turns and 2 defending turns.</li>
+            <li>Player 1 attacks first. After player 1 has chosen the card that will attack, it is player 2 defending turn and must choose a defending card.
+                Once the battle has ended, and the battle point is earned by the winner, it is player 2 attacking turn. So Player one will defend this time.
+                so turns will be:
+                    <ul>
+                        <li><b> Turn 1:</b> player 1 attacks - player 2 defends</li>
+                        <li><b> Turn 2:</b> player 2 attakcs - player 1 defends</li>
+                        <li><b> Turn 3:</b> player 1 attacks - player 2 defends</li>
+                        <li><b> Turn 4:</b> player 2 attakcs - player 1 defends</li>
+                    </ul>
+            </li>
+            <li>Be careful! Doesn't  matter if you are attacking or defending, <b> cards can only be played once!</b></li>
+        </ul>
+        <img  class="tutorial-fight" src="./assets/img/fight-tutorial-1.png" alt="">
+        <img  class="tutorial-fight" src="./assets/img/fight-tutorial-2.png" alt="">
+        <p> So those are the basics of Angular Heroes Battle game. The game finishes after the 4th turn and the player with most points 
+            (whose won most of the battle) will be the winner</p>
+        <p>Now is your turn to prepare your deck and Fight to be the very best in Angular Heroes Battle! Good luck & Have fun!</p>
+        
+        
+        
+    </div>
+    
+</div>
+<div mat-dialog-actions class="d-flex justify-content-end">
+    <a mat-raised-button  (click)="closeDialog()">Amazing tutorial! Thanks!</a>
+</div>
